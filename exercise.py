@@ -91,13 +91,3 @@
 # #         print('Fizz')
 # #     else:
 # #         print(number)
-import random
-def unique_random_range_no_lib_no_module_no_shuffle(start, end, n):
-    if n > (end - start + 1):
-        raise ValueError("n should be less than or equal to end-start+1")
-    numbers = list(range(start, end + 1))
-    for i in range(len(numbers) - 1, 0, -1):
-        j = int(i * float(random.randint(0, 0x7fff)) / (0x7fff + 1))
-        numbers[i], numbers[j] = numbers[j], numbers[i]
-    return numbers[:n]
-print(unique_random_range_no_lib_no_module_no_shuffle(1, 10,6))
